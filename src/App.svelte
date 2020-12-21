@@ -1,36 +1,39 @@
 <script>
-	export let name;
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
+<div class="container">
+  <div class="mt-6">
+    <div class="columns is-centered">
+      <div class="column is-4">
+        <span class="main-title">FindBooks</span>
+        <input class="input is-primary" type="text" placeholder="Search books by title">
+        <div class="mt-2 columns is-centered">
+          <button class="button is-primary">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <svelte:head>
+  <!-- BULMA CSS -->
 	<link 
 		rel="stylesheet" 
-		href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+  >
+    
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link 
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" 
+  >
 </svelte:head>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+  .main-title {
+    font-family: 'Monoton', cursive;
+    font-size: 64px;
+    color: green;
+  }
 </style>
