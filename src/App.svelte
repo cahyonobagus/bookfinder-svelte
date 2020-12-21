@@ -1,4 +1,8 @@
 <script>
+  let query = ''
+
+  // put console.log to show the changes of the state (query)
+  $: console.log(query)
 </script>
 
 <div class="container">
@@ -6,7 +10,14 @@
     <div class="columns is-centered">
       <div class="column is-4">
         <span class="main-title">FindBooks</span>
-        <input class="input is-primary" type="text" placeholder="Search books by title">
+        <input 
+          bind:value={query}
+          class="input is-primary" 
+          type="text" 
+          placeholder="Search books by title"
+        >
+        <!-- put text here to show the changes of the state (query) -->
+        <p>{query}</p>
         <div class="mt-2 columns is-centered">
           <button class="button is-primary">Search</button>
         </div>
