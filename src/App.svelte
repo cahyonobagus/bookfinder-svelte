@@ -7,6 +7,12 @@
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 </main>
 
+<svelte:head>
+	<link 
+		rel="stylesheet" 
+		href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+</svelte:head>
+
 <style>
 	main {
 		text-align: center;
