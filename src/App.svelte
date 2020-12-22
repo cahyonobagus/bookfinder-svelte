@@ -1,6 +1,15 @@
 <script>
-  let query = ''
+  import Book from './components/Book.svelte'
 
+  let query = ''
+  let books = [
+    { 
+      image: 'https://pbs.twimg.com/profile_images/1121395911849062400/7exmJEg4.png',
+      title: 'Svelte Book',
+      price: '$44.99',
+      url: '/'
+    }
+  ]
   // put console.log to show the changes of the state (query)
   $: console.log(query)
 </script>
@@ -26,20 +35,7 @@
   </div>
   <div class="mt-6">
     <div class="columns scrollable">
-      <div class="column is-two-ninth">
-        <div class="card has-background-primary-light">
-          <div class="card-image">
-            <figure class="image">
-              <img src="https://pbs.twimg.com/profile_images/1121395911849062400/7exmJEg4.png" alt="Book cover">
-            </figure>
-          </div>
-          <div class="card-content">
-            <p class="title is-5">Svelte Book</p>
-            <p class="subtitle is-6 has-text-danger-dark">$44.99</p>
-            <a href="/"  target="_blank" class="button is-primary is-fullwidth">Buy</a>
-          </div>
-        </div>
-      </div>
+      <Book book={books[0]}/>
     </div>
   </div>
 </div>
@@ -66,13 +62,6 @@
     color: green;
   }
 
-  @media screen and (min-width: 769px) {
-    .is-two-ninth {
-      flex: none;
-      width: 22.22%;
-    }
-  }
-
   /* Hide scrollbar for Chrome, Safari and Opera */
   .scrollable::-webkit-scrollbar {
     display: none;
@@ -83,4 +72,5 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
+
 </style>
