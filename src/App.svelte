@@ -24,6 +24,24 @@
       </div>
     </div>
   </div>
+  <div class="mt-6">
+    <div class="columns scrollable">
+      <div class="column is-two-ninth">
+        <div class="card has-background-primary-light">
+          <div class="card-image">
+            <figure class="image">
+              <img src="https://pbs.twimg.com/profile_images/1121395911849062400/7exmJEg4.png" alt="Book cover">
+            </figure>
+          </div>
+          <div class="card-content">
+            <p class="title is-5">Svelte Book</p>
+            <p class="subtitle is-6 has-text-danger-dark">$44.99</p>
+            <a href="/"  target="_blank" class="button is-primary is-fullwidth">Buy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <svelte:head>
@@ -46,5 +64,23 @@
     font-family: 'Monoton', cursive;
     font-size: 64px;
     color: green;
+  }
+
+  @media screen and (min-width: 769px) {
+    .is-two-ninth {
+      flex: none;
+      width: 22.22%;
+    }
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .scrollable::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge, Firefox */
+  .scrollable {
+    overflow: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
   }
 </style>
