@@ -10,8 +10,11 @@
       url: '/'
     }
   ]
-  // put console.log to show the changes of the state (query)
-  $: console.log(query)
+
+  function handleClickSearch(){
+    console.log('click search. Query: ', query)
+  }
+
 </script>
 
 <div class="container">
@@ -25,10 +28,8 @@
           type="text" 
           placeholder="Search books by title"
         >
-        <!-- put text here to show the changes of the state (query) -->
-        <p>{query}</p>
         <div class="mt-2 columns is-centered">
-          <button class="button is-primary">Search</button>
+          <button on:click={handleClickSearch} class="button is-primary">Search</button>
         </div>
       </div>
     </div>
