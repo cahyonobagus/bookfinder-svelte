@@ -2,23 +2,22 @@
   import Book from './components/Book.svelte'
 
   let query = ''
-  let books = [
-    { 
-      image: 'https://pbs.twimg.com/profile_images/1121395911849062400/7exmJEg4.png',
-      title: 'Svelte Book',
-      price: '$44.99',
-      url: '/'
-    }
-  ]
+  let books = []
+  let isProcessing = false
 
   async function handleClickSearch(){
+    isProcessing = true
     await fetch(`https://api.itbook.store/1.0/search/${query}`)
     .then(response => response.json())
     .then(data => {
       books = data.books
+      isProcessing = false
     })
-    .catch(console.error)
-  
+    .catch(error => {
+      alert('something went wrong')
+      console.error(error)
+      isProcessing = false
+    })
   }
 
 </script>
@@ -42,7 +41,13 @@
   </div>
   <div class="mt-6">
     <div class="columns scrollable">
-      <Book book={books[0]}/>
+      {#if books.length == 0 }
+        {#if isProcessing }
+          <progress class="progress is-small is-primary" max="100"></progress>
+        {/if }
+      {:else }
+        <Book book={books[0]}/>
+      {/if }
     </div>
   </div>
 </div>
