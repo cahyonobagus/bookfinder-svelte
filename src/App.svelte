@@ -46,7 +46,9 @@
           <progress class="progress is-small is-primary" max="100"></progress>
         {/if }
       {:else }
-        <Book book={books[0]}/>
+        {#each books as book, index (index) }
+          <Book book={book}/>
+        {/each}
       {/if }
     </div>
   </div>
