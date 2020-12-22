@@ -11,8 +11,14 @@
     }
   ]
 
-  function handleClickSearch(){
-    console.log('click search. Query: ', query)
+  async function handleClickSearch(){
+    await fetch(`https://api.itbook.store/1.0/search/${query}`)
+    .then(response => response.json())
+    .then(data => {
+      books = data.books
+    })
+    .catch(console.error)
+  
   }
 
 </script>
