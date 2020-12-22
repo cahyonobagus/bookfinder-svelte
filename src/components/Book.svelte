@@ -15,8 +15,10 @@
       </figure>
     </div>
     <div class="card-content">
-      <p class="title is-5">{book.title}</p>
-      <p class="subtitle is-6 has-text-danger-dark">{book.price}</p>
+      <div class="height160">
+        <p class="title is-5">{book.title}</p>
+        <p class="subtitle is-6 has-text-danger-dark">{book.price}</p>
+      </div>    
       <a href={book.url}  target="_blank" class="button is-primary is-fullwidth">Buy</a>
     </div>
   </div>
@@ -29,6 +31,10 @@
       flex: none;
       width: 22.22%;
     }
+  }
+
+  .height160 {
+    min-height: 160px;
   }
 
 </style>

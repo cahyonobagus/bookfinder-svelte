@@ -6,6 +6,7 @@
   let isProcessing = false
 
   async function handleClickSearch(){
+    books = []
     isProcessing = true
     await fetch(`https://api.itbook.store/1.0/search/${query}`)
     .then(response => response.json())
